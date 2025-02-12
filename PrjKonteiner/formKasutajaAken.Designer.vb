@@ -22,6 +22,7 @@ Partial Class formKasutajaAken
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtSisendTekst = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtValjundTekst1 = New System.Windows.Forms.TextBox()
@@ -30,6 +31,9 @@ Partial Class formKasutajaAken
         Me.btnPooraProtseduuriga = New System.Windows.Forms.Button()
         Me.txtValjundTekst2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.btnStopp = New System.Windows.Forms.Button()
+        Me.timerUuenda = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'txtSisendTekst
@@ -98,11 +102,36 @@ Partial Class formKasutajaAken
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Pooramine protseduuriga"
         '
+        'btnStart
+        '
+        Me.btnStart.Location = New System.Drawing.Point(308, 622)
+        Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(101, 45)
+        Me.btnStart.TabIndex = 8
+        Me.btnStart.Text = "Start"
+        Me.btnStart.UseVisualStyleBackColor = True
+        '
+        'btnStopp
+        '
+        Me.btnStopp.Location = New System.Drawing.Point(566, 621)
+        Me.btnStopp.Name = "btnStopp"
+        Me.btnStopp.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnStopp.Size = New System.Drawing.Size(84, 46)
+        Me.btnStopp.TabIndex = 9
+        Me.btnStopp.Text = "Stop"
+        Me.btnStopp.UseVisualStyleBackColor = True
+        '
+        'timerUuenda
+        '
+        Me.timerUuenda.Interval = 3000
+        '
         'formKasutajaAken
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1383, 742)
+        Me.Controls.Add(Me.btnStopp)
+        Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtValjundTekst2)
         Me.Controls.Add(Me.btnPooraProtseduuriga)
@@ -126,4 +155,7 @@ Partial Class formKasutajaAken
     Friend WithEvents btnPooraProtseduuriga As Button
     Friend WithEvents txtValjundTekst2 As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnStart As Button
+    Friend WithEvents btnStopp As Button
+    Friend WithEvents timerUuenda As Timer
 End Class
