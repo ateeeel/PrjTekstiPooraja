@@ -6,5 +6,5 @@
     Property Tekst As String
     Function PooraTekst() As String
 
-    Sub TeisendajaTekst(ByRef sisendTekst As String)
+    Sub TeisendaTekst(ByRef sisendTekst As String)
 End Interface
