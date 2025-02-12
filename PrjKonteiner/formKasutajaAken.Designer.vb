@@ -37,6 +37,7 @@ Partial Class formKasutajaAken
         Me.charLength = New System.Windows.Forms.Label()
         Me.lblVowels = New System.Windows.Forms.Label()
         Me.lblAscii = New System.Windows.Forms.Label()
+        Me.cmbPoorajaValik = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'txtSisendTekst
@@ -154,13 +155,22 @@ Partial Class formKasutajaAken
         Me.lblAscii.Name = "lblAscii"
         Me.lblAscii.Size = New System.Drawing.Size(130, 40)
         Me.lblAscii.TabIndex = 12
-        Me.lblAscii.Text = "First ASCII char: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last ASCII char:"
+        Me.lblAscii.Text = "First ASCII char: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last ASCII char:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'cmbPoorajaValik
+        '
+        Me.cmbPoorajaValik.FormattingEnabled = True
+        Me.cmbPoorajaValik.Location = New System.Drawing.Point(868, 580)
+        Me.cmbPoorajaValik.Name = "cmbPoorajaValik"
+        Me.cmbPoorajaValik.Size = New System.Drawing.Size(121, 28)
+        Me.cmbPoorajaValik.TabIndex = 13
         '
         'formKasutajaAken
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1383, 742)
+        Me.Controls.Add(Me.cmbPoorajaValik)
         Me.Controls.Add(Me.lblAscii)
         Me.Controls.Add(Me.lblVowels)
         Me.Controls.Add(Me.charLength)
@@ -195,4 +205,5 @@ Partial Class formKasutajaAken
     Friend WithEvents charLength As Label
     Friend WithEvents lblVowels As Label
     Friend WithEvents lblAscii As Label
+    Friend WithEvents cmbPoorajaValik As ComboBox
 End Class
