@@ -94,4 +94,11 @@
             lblAscii.Text = "No text entered"
         End If
     End Sub
+
+    Private Sub formKasutajaAken_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbPoorajaValik.Items.Add("TekstiPooraja")
+        cmbPoorajaValik.Items.Add("AlgoritmilinePooraja")
+        cmbPoorajaValik.SelectedIndex = 0 ' Set default selection to TekstiPooraja
+    End Sub
+
 End Class

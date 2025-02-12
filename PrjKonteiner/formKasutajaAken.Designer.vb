@@ -162,7 +162,7 @@ Partial Class formKasutajaAken
         Me.cmbPoorajaValik.FormattingEnabled = True
         Me.cmbPoorajaValik.Location = New System.Drawing.Point(868, 580)
         Me.cmbPoorajaValik.Name = "cmbPoorajaValik"
-        Me.cmbPoorajaValik.Size = New System.Drawing.Size(121, 28)
+        Me.cmbPoorajaValik.Size = New System.Drawing.Size(195, 28)
         Me.cmbPoorajaValik.TabIndex = 13
         '
         'formKasutajaAken

@@ -33,11 +33,13 @@
     End Property
 
     Private Function PooraTekst() As String Implements ITeisendaja.PooraTekst
-        Dim reversed As String = ""
+        Dim reversed As New System.Text.StringBuilder()
+
         For i As Integer = PooratavTekst.Length - 1 To 0 Step -1
-            reversed &= PooratavTekst(i)
+            reversed.Append(PooratavTekst(i))
         Next
-        Return reversed
+
+        Return reversed.ToString()
     End Function
 
     Private Sub TeisendaTekst(ByRef sisendTekst As String) Implements ITeisendaja.TeisendaTekst
