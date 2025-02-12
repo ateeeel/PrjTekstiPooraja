@@ -34,6 +34,9 @@ Partial Class formKasutajaAken
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnStopp = New System.Windows.Forms.Button()
         Me.timerUuenda = New System.Windows.Forms.Timer(Me.components)
+        Me.charLength = New System.Windows.Forms.Label()
+        Me.lblVowels = New System.Windows.Forms.Label()
+        Me.lblAscii = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtSisendTekst
@@ -125,11 +128,42 @@ Partial Class formKasutajaAken
         '
         Me.timerUuenda.Interval = 3000
         '
+        'charLength
+        '
+        Me.charLength.AutoSize = True
+        Me.charLength.Location = New System.Drawing.Point(863, 180)
+        Me.charLength.Name = "charLength"
+        Me.charLength.Size = New System.Drawing.Size(59, 20)
+        Me.charLength.TabIndex = 10
+        Me.charLength.Text = "Pikkus:"
+        Me.charLength.UseWaitCursor = True
+        '
+        'lblVowels
+        '
+        Me.lblVowels.AutoSize = True
+        Me.lblVowels.Location = New System.Drawing.Point(864, 141)
+        Me.lblVowels.Name = "lblVowels"
+        Me.lblVowels.Size = New System.Drawing.Size(64, 20)
+        Me.lblVowels.TabIndex = 11
+        Me.lblVowels.Text = "Vowels:"
+        '
+        'lblAscii
+        '
+        Me.lblAscii.AutoSize = True
+        Me.lblAscii.Location = New System.Drawing.Point(863, 218)
+        Me.lblAscii.Name = "lblAscii"
+        Me.lblAscii.Size = New System.Drawing.Size(130, 40)
+        Me.lblAscii.TabIndex = 12
+        Me.lblAscii.Text = "First ASCII char: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Last ASCII char:"
+        '
         'formKasutajaAken
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1383, 742)
+        Me.Controls.Add(Me.lblAscii)
+        Me.Controls.Add(Me.lblVowels)
+        Me.Controls.Add(Me.charLength)
         Me.Controls.Add(Me.btnStopp)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.Label3)
@@ -158,4 +192,7 @@ Partial Class formKasutajaAken
     Friend WithEvents btnStart As Button
     Friend WithEvents btnStopp As Button
     Friend WithEvents timerUuenda As Timer
+    Friend WithEvents charLength As Label
+    Friend WithEvents lblVowels As Label
+    Friend WithEvents lblAscii As Label
 End Class

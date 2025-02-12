@@ -48,4 +48,37 @@
 
         btnStopp.Enabled = False
     End Sub
+
+    Private Sub txtSisendTekst_TextChanged(sender As Object, e As EventArgs) Handles txtSisendTekst.TextChanged
+        ' counting characters
+        Dim sisendLength As Object
+        sisendLength = Len(Me.txtSisendTekst.Text)
+        charLength.Text = "Pikkus:" & sisendLength
+
+        ' counting vowels
+        Dim I As Integer
+        Dim nVowels As Integer
+        Dim Vowels As String
+
+        Vowels = "aeiouöäüõÖÄÕÜOIUAE"
+
+        For I = 1 To Len(Me.txtSisendTekst.Text)
+            If InStr(Vowels, Mid$(txtSisendTekst.Text, I, 1)) Then
+                nVowels = nVowels + 1
+            End If
+        Next
+        lblVowels.Text = "Vowels:" & nVowels
+
+        ' geting fisrt and last char in a string
+        If txtSisendTekst.Text.Length > 0 Then
+            Dim firstChar = txtSisendTekst.Text.First()
+            Dim lastChar = txtSisendTekst.Text.Last()
+            Dim firstAscii As Integer = Asc(firstChar)
+            Dim lastAscii As Integer = Asc(lastChar)
+            lblAscii.Text = "First ASCII char: " & firstAscii & vbNewLine & "Last ASCII char: " & lastAscii
+        Else
+            lblAscii.Text = "No text entered"
+        End If
+
+    End Sub
 End Class
