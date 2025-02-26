@@ -33,6 +33,10 @@
     End Property
 
     Private Function PooraTekst() As String Implements ITeisendaja.PooraTekst
+        If PooratavTekst Is Nothing Then
+            Throw New InvalidOperationException("PooratavTekst must be initialized before calling PooraTekst.")
+        End If
+
         Dim reversed As New System.Text.StringBuilder()
 
         For i As Integer = PooratavTekst.Length - 1 To 0 Step -1
