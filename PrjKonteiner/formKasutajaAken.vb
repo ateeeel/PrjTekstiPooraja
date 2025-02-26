@@ -1,11 +1,10 @@
 ﻿Public Class formKasutajaAken
 
-    ' Event handler for "PooraFunktsiooniga" button
     Private Sub btnPooraFunktsiooniga_Click(sender As Object, e As EventArgs) _
         Handles btnPooraFunktsiooniga.Click
         Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
 
-        ' Dynamically select the class based on ComboBox selection
+        'select the class based on combobox selection
         If cmbPoorajaValik.SelectedItem.ToString() = "TekstiPooraja" Then
             pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja()
         ElseIf cmbPoorajaValik.SelectedItem.ToString() = "AlgoritmilinePooraja" Then
@@ -16,13 +15,18 @@
         txtValjundTekst1.Text = pooraja.PooraTekst()
     End Sub
 
-    ' Event handler for "PooraProtseduuriga" button
     Private Sub btnPooraProtseduuriga_Click(sender As Object, e As EventArgs) _
-        Handles btnPooraProtseduuriga.Click
+    Handles btnPooraProtseduuriga.Click
 
         Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
 
-        ' Dynamically select the class based on ComboBox selection
+        'check input text
+        If String.IsNullOrEmpty(txtSisendTekst.Text) Then
+            MessageBox.Show("Tekst ei tohi olla tühi")
+            Return
+        End If
+
+        'select the class based on combobox selection
         If cmbPoorajaValik.SelectedItem.ToString() = "TekstiPooraja" Then
             pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja()
         ElseIf cmbPoorajaValik.SelectedItem.ToString() = "AlgoritmilinePooraja" Then
@@ -33,18 +37,16 @@
         txtValjundTekst2.Text = pooraja.Tekst
     End Sub
 
-    ' Event handler for the "Start" button
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         timerUuenda.Enabled = True
         btnStart.Enabled = False
         btnStopp.Enabled = True
     End Sub
 
-    ' Timer tick event for updating text
     Private Sub timerUuenda_Tick(sender As Object, e As EventArgs) Handles timerUuenda.Tick
         Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
 
-        ' Dynamically select the class based on ComboBox selection
+        'select the class based on combobox selection
         If cmbPoorajaValik.SelectedItem.ToString() = "TekstiPooraja" Then
             pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja()
         ElseIf cmbPoorajaValik.SelectedItem.ToString() = "AlgoritmilinePooraja" Then
@@ -55,14 +57,12 @@
         txtValjundTekst1.Text = pooraja.Tekst
     End Sub
 
-    ' Event handler for the "Stop" button
     Private Sub btnStopp_Click(sender As Object, e As EventArgs) Handles btnStopp.Click
         timerUuenda.Enabled = False
         btnStart.Enabled = True
         btnStopp.Enabled = False
     End Sub
 
-    ' TextChanged event for counting characters and vowels, etc.
     Private Sub txtSisendTekst_TextChanged(sender As Object, e As EventArgs) Handles txtSisendTekst.TextChanged
         ' counting characters
         Dim sisendLength As Object
@@ -83,7 +83,7 @@
         Next
         lblVowels.Text = "Vowels:" & nVowels
 
-        ' Getting first and last char in a string
+        ' getting first and last char in a string
         If txtSisendTekst.Text.Length > 0 Then
             Dim firstChar = txtSisendTekst.Text.First()
             Dim lastChar = txtSisendTekst.Text.Last()
@@ -98,7 +98,7 @@
     Private Sub formKasutajaAken_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbPoorajaValik.Items.Add("TekstiPooraja")
         cmbPoorajaValik.Items.Add("AlgoritmilinePooraja")
-        cmbPoorajaValik.SelectedIndex = 0 ' Set default selection to TekstiPooraja
+        cmbPoorajaValik.SelectedIndex = 0 ' set default selection to TekstiPooraja
     End Sub
 
 End Class
